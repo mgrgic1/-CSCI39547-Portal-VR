@@ -14,13 +14,13 @@ TagManager:
   - 
   - 
   - ground
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - grabable
+  - NOEXIT
+  - gun
+  - wall_ForPortal
+  - ceiling_ForPortal
+  - ground_ForPortal
+  - portal
   - 
   - 
   - 
