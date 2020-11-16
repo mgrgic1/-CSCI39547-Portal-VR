@@ -14,11 +14,11 @@ TagManager:
   - 
   - 
   - ground
-  - 
-  - 
-  - 
-  - 
-  - 
+  - grabable
+  - wall_ForPortal
+  - ground_ForPortal
+  - ceiling_ForPortal
+  - portal
   - 
   - 
   - 

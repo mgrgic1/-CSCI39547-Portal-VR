@@ -41,6 +41,38 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Grab"",
+                    ""type"": ""Button"",
+                    ""id"": ""a8f6bfbc-0bd2-4122-9a05-96b08cd9772b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""View"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""b788eb71-741a-4849-a15f-07d2631c9530"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ShootFirstPortal"",
+                    ""type"": ""Button"",
+                    ""id"": ""c50fb4b6-eba3-45a8-b2b7-da68504f969a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""ShootSecondPortal"",
+                    ""type"": ""Button"",
+                    ""id"": ""d9139d7a-cc0a-4ca9-b7a8-d884e493f05d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -153,6 +185,83 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf54c191-25cb-4480-921a-c70372a46300"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Computer"",
+                    ""action"": ""View"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d90e9046-eccd-4888-9939-5adc11ed4211"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Computer"",
+                    ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4b606405-1a16-4e78-854f-6d90d09a295c"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS4"",
+                    ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""240d683d-d7ae-4426-95cf-6579799fa69b"",
+                    ""path"": ""<DualShockGamepad>/leftTrigger"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""PS4"",
+                    ""action"": ""ShootFirstPortal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a1016b94-58f8-401e-ad1f-c369fb56e322"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Computer"",
+                    ""action"": ""ShootFirstPortal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f7650db-4089-4151-a972-9b1eefdee680"",
+                    ""path"": ""<DualShockGamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS4"",
+                    ""action"": ""ShootSecondPortal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b608d093-b461-4ff2-b6e3-e30b8783e11d"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Computer"",
+                    ""action"": ""ShootSecondPortal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -187,6 +296,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
         m_Gameplay_Sprint = m_Gameplay.FindAction("Sprint", throwIfNotFound: true);
+        m_Gameplay_Grab = m_Gameplay.FindAction("Grab", throwIfNotFound: true);
+        m_Gameplay_View = m_Gameplay.FindAction("View", throwIfNotFound: true);
+        m_Gameplay_ShootFirstPortal = m_Gameplay.FindAction("ShootFirstPortal", throwIfNotFound: true);
+        m_Gameplay_ShootSecondPortal = m_Gameplay.FindAction("ShootSecondPortal", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -239,6 +352,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Jump;
     private readonly InputAction m_Gameplay_Movement;
     private readonly InputAction m_Gameplay_Sprint;
+    private readonly InputAction m_Gameplay_Grab;
+    private readonly InputAction m_Gameplay_View;
+    private readonly InputAction m_Gameplay_ShootFirstPortal;
+    private readonly InputAction m_Gameplay_ShootSecondPortal;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
@@ -246,6 +363,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
         public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
         public InputAction @Sprint => m_Wrapper.m_Gameplay_Sprint;
+        public InputAction @Grab => m_Wrapper.m_Gameplay_Grab;
+        public InputAction @View => m_Wrapper.m_Gameplay_View;
+        public InputAction @ShootFirstPortal => m_Wrapper.m_Gameplay_ShootFirstPortal;
+        public InputAction @ShootSecondPortal => m_Wrapper.m_Gameplay_ShootSecondPortal;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -264,6 +385,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Sprint.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSprint;
                 @Sprint.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSprint;
                 @Sprint.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSprint;
+                @Grab.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnGrab;
+                @Grab.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnGrab;
+                @Grab.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnGrab;
+                @View.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnView;
+                @View.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnView;
+                @View.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnView;
+                @ShootFirstPortal.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnShootFirstPortal;
+                @ShootFirstPortal.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnShootFirstPortal;
+                @ShootFirstPortal.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnShootFirstPortal;
+                @ShootSecondPortal.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnShootSecondPortal;
+                @ShootSecondPortal.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnShootSecondPortal;
+                @ShootSecondPortal.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnShootSecondPortal;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -277,6 +410,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Sprint.started += instance.OnSprint;
                 @Sprint.performed += instance.OnSprint;
                 @Sprint.canceled += instance.OnSprint;
+                @Grab.started += instance.OnGrab;
+                @Grab.performed += instance.OnGrab;
+                @Grab.canceled += instance.OnGrab;
+                @View.started += instance.OnView;
+                @View.performed += instance.OnView;
+                @View.canceled += instance.OnView;
+                @ShootFirstPortal.started += instance.OnShootFirstPortal;
+                @ShootFirstPortal.performed += instance.OnShootFirstPortal;
+                @ShootFirstPortal.canceled += instance.OnShootFirstPortal;
+                @ShootSecondPortal.started += instance.OnShootSecondPortal;
+                @ShootSecondPortal.performed += instance.OnShootSecondPortal;
+                @ShootSecondPortal.canceled += instance.OnShootSecondPortal;
             }
         }
     }
@@ -304,5 +449,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
+        void OnGrab(InputAction.CallbackContext context);
+        void OnView(InputAction.CallbackContext context);
+        void OnShootFirstPortal(InputAction.CallbackContext context);
+        void OnShootSecondPortal(InputAction.CallbackContext context);
     }
 }
