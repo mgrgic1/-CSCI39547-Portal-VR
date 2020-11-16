@@ -9,8 +9,11 @@ public class gun : MonoBehaviour
     [SerializeField] GameObject exitPortal;
     [SerializeField] Transform gunFirePos; //the (local) position that gun will be firing from
 
+<<<<<<< HEAD
     [SerializeField] AudioClip gunShoot;
 
+=======
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
     GameObject firstPortal;
     GameObject secondPortal;
 
@@ -39,6 +42,7 @@ public class gun : MonoBehaviour
     void shootPortal(bool isFirst)
     {
         if (Physics.Raycast(gunFirePos.position, gunFirePos.forward, out raycastHit))
+<<<<<<< HEAD
         {
             //plays gun shot sound
             //turns on gun particle effects
@@ -50,6 +54,9 @@ public class gun : MonoBehaviour
             }
 
 
+=======
+        {          
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
             //if player fires a shot and portal exists, destroys it
             if(isFirst && firstPortal != null)
             {

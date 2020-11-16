@@ -36,7 +36,11 @@ public class testCamera : MonoBehaviour
         var MouseY = lookVector.y * mouseSensitivity * Time.deltaTime;
 
         xRotation -= MouseY;
+<<<<<<< HEAD
         xRotation = Mathf.Clamp(xRotation, -80f, 90f);
+=======
+        xRotation = Mathf.Clamp(xRotation, -80f, 80f);
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
 
         transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
 

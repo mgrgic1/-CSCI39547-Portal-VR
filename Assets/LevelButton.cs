@@ -18,6 +18,7 @@ public class LevelButton : MonoBehaviour
         //activating door/button
         if (collider.gameObject.layer == LayerMask.NameToLayer("grabable"))
         {
+<<<<<<< HEAD
             StartCoroutine(waitToPlay());
             openDoor.GetComponent<Animator>().SetBool("openDoor", true);
             gameObject.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.green);
@@ -33,6 +34,13 @@ public class LevelButton : MonoBehaviour
 
     }
 
+=======
+            openDoor.GetComponent<Animator>().SetBool("openDoor", true);
+            gameObject.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.green);
+        }
+    }
+
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
 
     void OnTriggerExit(Collider collider)
     {

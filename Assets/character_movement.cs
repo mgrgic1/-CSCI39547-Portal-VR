@@ -54,9 +54,12 @@ public class character_movement : MonoBehaviour
             Vector3 input = new Vector3(moveByVector.x * sprintMultiplier * moveMultiplier, 0, moveByVector.y * sprintMultiplier * moveMultiplier);
             float cameraRot = Camera.main.transform.rotation.eulerAngles.y;
             gameObject.GetComponent<Rigidbody>().position += Quaternion.Euler(0, cameraRot, 0) * input * 1 * Time.deltaTime;
+<<<<<<< HEAD
 
             gameObject.GetComponent<Animator>().SetBool("isWalking", true);
 
+=======
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
         }
         
         if(moveByVector.y < 0)
@@ -64,6 +67,7 @@ public class character_movement : MonoBehaviour
             Vector3 input = new Vector3(-moveByVector.x * sprintMultiplier * moveMultiplier, 0, -moveByVector.y * sprintMultiplier * moveMultiplier);
             float cameraRot = Camera.main.transform.rotation.eulerAngles.y;
             gameObject.GetComponent<Rigidbody>().position -= Quaternion.Euler(0, cameraRot, 0) * input * 1 * Time.deltaTime;
+<<<<<<< HEAD
             gameObject.GetComponent<Animator>().SetBool("isWalking", true);
         }
 
@@ -73,6 +77,9 @@ public class character_movement : MonoBehaviour
         }
 
 
+=======
+        }
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
     }
 
     void Jump()
@@ -104,6 +111,7 @@ public class character_movement : MonoBehaviour
     }
 
 
+<<<<<<< HEAD
     public void footstepSound()
     {
         gameObject.GetComponent<AudioSource>().Play();
@@ -112,6 +120,8 @@ public class character_movement : MonoBehaviour
     }
 
 
+=======
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
     void OnEnable() 
     {
         controls.Gameplay.Enable(); //enables controls when script is enabled

@@ -15,12 +15,21 @@ TagManager:
   - 
   - ground
   - grabable
+<<<<<<< HEAD
   - wall_ForPortal
   - ground_ForPortal
   - ceiling_ForPortal
   - portal
   - 
   - 
+=======
+  - NOEXIT
+  - gun
+  - wall_ForPortal
+  - ceiling_ForPortal
+  - ground_ForPortal
+  - portal
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
   - 
   - 
   - 

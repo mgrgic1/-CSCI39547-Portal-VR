@@ -222,6 +222,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""240d683d-d7ae-4426-95cf-6579799fa69b"",
+<<<<<<< HEAD
                     ""path"": ""<DualShockGamepad>/leftTrigger"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
@@ -233,6 +234,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a1016b94-58f8-401e-ad1f-c369fb56e322"",
+=======
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -244,6 +247,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6f7650db-4089-4151-a972-9b1eefdee680"",
+<<<<<<< HEAD
                     ""path"": ""<DualShockGamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -255,6 +259,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b608d093-b461-4ff2-b6e3-e30b8783e11d"",
+=======
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",

@@ -41,11 +41,15 @@ public class gunGrab : MonoBehaviour
         //if a GO is in our view and we want to pick it up
         if(isViewing && isGrabbing)
         {
+<<<<<<< HEAD
             //code to fire once
+=======
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
             if(pickupText.gameObject.activeSelf)
             {
                 pickupText.gameObject.SetActive(false);
                 grabbingObject.GetComponent<Rigidbody>().isKinematic = true;
+<<<<<<< HEAD
 
                 //plays gun grab sound
                 //turns on particle effects
@@ -53,6 +57,8 @@ public class gunGrab : MonoBehaviour
                 transform.GetChild(0).Find("grabPos").Find("hold").GetComponent<ParticleSystem>().Play();
                 transform.GetChild(0).Find("grabPos").Find("hold").GetChild(0).GetComponent<ParticleSystem>().Play();
 
+=======
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
             }
 
             //for putting the object we want to grab in our "moveToPos" transform
@@ -79,14 +85,24 @@ public class gunGrab : MonoBehaviour
         {
             grabbingObject.transform.parent = null;
             grabbingObject.GetComponent<Rigidbody>().isKinematic = false;
+<<<<<<< HEAD
             transform.GetChild(0).GetComponent<AudioSource>().Stop();
             transform.GetChild(0).Find("grabPos").Find("hold").GetComponent<ParticleSystem>().Stop();
             transform.GetChild(0).Find("grabPos").Find("hold").GetChild(0).GetComponent<ParticleSystem>().Stop();
+=======
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
         }
 
         
         
     }
+<<<<<<< HEAD
+=======
+    within portal distance -- interaction dot glows or changes color or w/e
+portal color glow...? further denote which is p1 and p2
+keep testing
+
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
 
     void OnTriggerEnter(Collider collider)
     {

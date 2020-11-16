@@ -10,6 +10,7 @@ public class PortalBehavior : MonoBehaviour
     static GameObject portal1;
     static GameObject portal2;
 
+<<<<<<< HEAD
     public static Vector3 portalExitForce; //the velocity at which player will exit portal (set manually)
 
     //will allow player to travel from a wall portal to a floor portal and preserve the velocity
@@ -20,6 +21,8 @@ public class PortalBehavior : MonoBehaviour
     //will take whatever velocity they have when entering the portal and apply it to when they exit
     Vector2 preserveVelocity; 
 
+=======
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +45,11 @@ public class PortalBehavior : MonoBehaviour
 
     }
 
+<<<<<<< HEAD
     void OnTriggerEnter(Collider collision)
+=======
+    void OnCollisionEnter(Collision collision)
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
     {
         if(collision.gameObject.tag == "Player")
         {
@@ -60,6 +67,12 @@ public class PortalBehavior : MonoBehaviour
                     if (portal2.transform.rotation == Quaternion.Euler(new Vector3(-180, 90, 0)) || portal2.transform.rotation == Quaternion.Euler(new Vector3(0, 90, 0)))
                     {
                         collision.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+<<<<<<< HEAD
+=======
+
+                        //stops velocity
+                        collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
                     }
                 }
                 else
@@ -71,6 +84,12 @@ public class PortalBehavior : MonoBehaviour
                     if (portal1.transform.rotation == Quaternion.Euler(new Vector3(-180, 90, 0)) || portal1.transform.rotation == Quaternion.Euler(new Vector3(0, 90, 0)))
                     {
                         collision.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+<<<<<<< HEAD
+=======
+
+                        //stops velocity
+                        collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
                     }
                 }
 
@@ -79,6 +98,7 @@ public class PortalBehavior : MonoBehaviour
     }
 
 
+<<<<<<< HEAD
     void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -89,6 +109,10 @@ public class PortalBehavior : MonoBehaviour
                 collision.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(portalExitForce.y/2, portalExitForce.x, portalExitForce.z);
             }
         }
+=======
+    void OnCollisionExit(Collision collision)
+    {
+>>>>>>> f03c175817e34ff05836204989bfb07b1affdfa8
 
     }
 
